@@ -116,7 +116,7 @@ func createImageRunCmd(cmd *cobra.Command, args []string) {
 		NewtUsage(cmd, err)
 	}
 
-	if err := b.Build(); err != nil {
+	if err := b.PrepBuild(); err != nil {
 		NewtUsage(nil, err)
 	}
 

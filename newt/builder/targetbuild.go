@@ -537,10 +537,6 @@ func (t *TargetBuilder) autogenKeys() error {
 }
 
 func (t *TargetBuilder) Build() error {
-	if err := t.PrepBuild(); err != nil {
-		return err
-	}
-
 	project.ResetDeps(t.AppList)
 
 	if err := t.bspPkg.Reload(t.AppBuilder.cfg.SettingValues()); err != nil {

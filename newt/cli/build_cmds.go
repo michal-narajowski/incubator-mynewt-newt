@@ -160,6 +160,10 @@ func buildRunCmd(cmd *cobra.Command, args []string, printShellCmds bool, execute
 			NewtUsage(nil, err)
 		}
 
+		if err := b.PrepBuild(); err != nil {
+			NewtUsage(nil, err)
+		}
+
 		if err := b.Build(); err != nil {
 			NewtUsage(nil, err)
 		}
